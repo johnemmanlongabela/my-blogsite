@@ -1,9 +1,8 @@
 from django import template
-from django.utils.safestring import mark_safe
-import markdown
+import markdown as md
 
 register = template.Library()
 
 @register.filter(name='markdown')
 def markdown_format(text):
-    return mark_safe(markdown.markdown(text, extensions=['fenced_code', 'tables']))
+    return md.markdown(text, safe_mode='escape')
