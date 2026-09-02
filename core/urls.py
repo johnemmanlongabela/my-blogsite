@@ -15,7 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django_distill import distill_path
-from . import views
+from blog import views
 
 urlpatterns = [
     distill_path('', views.index, name='index'),  # Replace views.index with your home view
