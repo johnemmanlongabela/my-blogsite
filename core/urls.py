@@ -10,6 +10,6 @@ def get_all_posts():
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    distill_path('my-blogsite/', views.post_list, name='post_list'),
-    distill_path('my-blogsite/<slug:slug>/', views.post_detail, name='post_detail', distill_func=get_all_posts),
+    distill_path('', views.post_list, name='post_list'),
+    distill_path('<slug:slug>/', views.post_detail, name='post_detail', distill_func=get_all_posts),
 ]
