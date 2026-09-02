@@ -1,7 +1,7 @@
-from django.urls import path
+from django_distill import distill_path
 from . import views
 
 urlpatterns = [
-    path('', views.post_list, name='post_list'),
-    path('<slug:slug>/', views.post_detail, name='post_detail'),
+    distill_path('', views.index, name='index'),  # Replace views.index with your home view
+    # Add distill_path for any other static views
 ]
